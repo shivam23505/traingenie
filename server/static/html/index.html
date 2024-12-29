@@ -1,0 +1,52 @@
+{% extends "base.html" %}
+{% block content %}
+<h1> TrainGenie </h1>
+<div class="row justify-content-center">
+    <div class="col-12 col-md-10 col-lg-8">
+        <form class="card card-sm" action="/train_info" method="GET">
+            <div class="card-body row no-gutters align-items-center">
+                <div class="col-auto">
+                    <i class="fas fa-search h4 text-body"></i>
+                </div>
+                <!--end of col-->
+                <div class="col">
+                    <input class="form-control form-control-lg form-control-borderless" type="search"
+                        placeholder="Search for train number (eg. 22222)" name="train_number">
+                </div>
+                <!--end of col-->
+                <div class="col-auto">
+                    <button class="btn btn-lg btn-success" type="submit">Search</button>
+                </div>
+                <!--end of col-->
+            </div>
+        </form>
+    </div>
+    <!--end of col-->
+</div>
+<div class="row justify-content-center">
+    <div class="col-12 col-md-10 col-lg-8">
+        <form class="card card-sm" action="/train_search" method="GET">
+            <div class="card-body row no-gutters align-items-center">
+                <div class="col-auto">
+                    <i class="fas fa-search h4 text-body"></i>
+                </div>
+                <!--end of col-->
+                <div class="col">
+                    <input class="form-control form-control-lg form-control-borderless"
+                        placeholder="Start Station (eg. MAA)" name="start_station">
+                </div>
+                <div class="col">
+                    <input class="form-control form-control-lg form-control-borderless"
+                        placeholder="End Station (eg. MAA)" name="end_station">
+                </div>
+                <!--end of col-->
+                <div class="col-auto">
+                    <button class="btn btn-lg btn-success" type="submit">Search</button>
+                </div>
+                <!--end of col-->
+            </div>
+        </form>
+    </div>
+    <!--end of col-->
+</div>
+{% endblock %}

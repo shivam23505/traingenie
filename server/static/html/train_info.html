@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+
+{%block title %}Train info for {{ train.train_number }}{% endblock %}
+{%block content %}
+<div class="row">
+    <div class="col-lg-12 d-flex justify-content-center">
+        <h1 class="display-4"> <i>{{ train.train_number }}</i> | {{ train.train_name }} </h1>
+    </div>
+</div>
+<div class="row">
+    <div class="col-lg-5 d-flex justify-content-center">
+        <div class="card">
+            <div class="card-body">
+                <h1 class="card-title">{{ train.source }}</h1>
+                <h4 class="card-subtitle mb-2 text-muted">{{ train.source_time }}</h4>
+                <p class="card-text">starting station</p>
+                <a href="/train_search?start_station={{train.source}}" class="card-link">See all trains originating
+                    from {{ train.source }}</a>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-2 d-flex justify-content-center align-self-center"><i style="font-size: 5em;"
+            class="fa fa-arrow-right"></i></div>
+    <div class="col-lg-5 d-flex justify-content-center">
+        <div class="card">
+            <div class="card-body">
+                <h1 class="card-title">{{ train.dest }}</h1>
+                <h4 class="card-subtitle mb-2 text-muted">{{ train.dest_time }}</h4>
+                <p class="card-text">ending station</p>
+                <a href="/train_search?end_station={{train.dest}}" class="card-link">See all trains ending at {{
+                    train.dest }}</a>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
